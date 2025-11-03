@@ -213,7 +213,11 @@
 
     /* ---------------- MOBILE RESPONSIVE RULES ---------------- */
     @media (max-width:600px){
-      body{padding:16px;}
+      /* add safe top spacing so content isn't cut on phones with notch/status bar */
+      body{
+        padding:16px;
+        padding-top: calc(16px + env(safe-area-inset-top)); /* uses safe-area inset when available */
+      }
       .card{width:100%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,0.12);}
       .left{padding:20px; gap:14px;}
       .right{padding:18px;}
